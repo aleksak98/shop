@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://assets.materialup.com/uploads/c502ad5a-9754-46fb-83d3-b14f2bb669ab/preview.jpg"/>
+</head>
+<body onload="addCategoryItem()">
+<header class="header">
+    <a href="" ><img src="img/output-onlinepngtools.png" class="logoMini"/> </a>
+    <select class="logoMini" id="miniL"> </select>
+    <img src="img/5841a09ba6515b1e0ad75a6f.png" class="logo"/>
+    <ul class="menu-list">
+        <li><a href="">Women </a></li>
+        <li><a href="">Men </a></li>
+        <li><a href="">Kids </a></li>
+    </ul>
+    <a href="" ><img src="img/16480.png" class="logoMini2"/> </a>
+    <a href="" ><img src="img/zvezdica.png" class="logoMini2"/> </a>
+    <a href="" ><img src="img/briefcase-hd-png-512x512-pixel-512.png" class="logoMini2"/> </a>
+    <div class="header nav-bar">
+        <ul class="nav-menu-bar">
+            <li><a href="" id="first-in-order">NEW IN</a></li>
+            <li><a href="">SHOP BY</a></li>
+            <li><a href="">DESIGNERS</a></li>
+            <li><a href="">CLOTHING</a></li>
+            <li><a href="">SHOES</a></li>
+            <li><a href="">BAGS</a></li>
+            <li><a href="">ACCESSORIES</a></li>
+            <li><a href="">JEWELRY</a></li>
+            <li><a href="">PRE-OWNED</a></li>
+            <li><a href="" id="last-in-order">SALE</a></li>
+            <li><input type="text" placeholder="Search" id="search-button" onmouseover="searchExpand('search-button')" onmouseout="searchHide('search-button')"> </li>
+            <li><img src="img/search-icon-png-21.png" id="search-icon"  onmouseover="searchExpand('search-button')" onmouseout="searchHide('search-button')"/></li>
+        </ul>
+    </div>
+
+</header>
+
+<div class="dropdown">
+    <button class="dropbtn">Filter By Price:</button>
+    <div id="myDropdown" class="dropdown-content ">
+        <a href="#"><input type="checkbox" id="do100" value="do100RSD" class="checkbox" onclick="getPriceRate()" > Do 100 RSD</a>
+        <a href="#"><input type="checkbox" id="od100do200" value="od100do200RSD" class="checkbox" onclick="getPriceRate()" > Od 100 do 200 RSD</a>
+        <a href="#"><input type="checkbox" id="preko200" value="preko2000" class="checkbox" onclick="getPriceRate()"> Preko 200 RSD</a>
+    </div>
+    <!--        <button onclick="addShow()" class="dropbtn1">Filter by type</button>-->
+    <!--        <div id="myDropdown1" class="dropdown-content">-->
+    <!--            <a href="#"><input type="checkbox" id="voce" value="voce" onclick="getType()" > Voce</a>-->
+    <!--            <a href="#"><input type="checkbox" id="povrce" value="povrce" onclick="getType()" > Povrce</a>-->
+    <!--        </div>-->
+</div>
+<div class="filter-by-type">
+    <button class="dropbtn">Filter By Type:</button>
+    <div id="myDropdown1" class="dropdown-content">
+        <a href="#"><input type="checkbox" id="voce" value="voce" onclick="getType()" > Voce</a>
+        <a href="#"><input type="checkbox" id="povrce" value="povrce" onclick="getType()" > Povrce</a>
+    </div>
+</div>
+<select id="select-sort" onchange="sortByPrice()">
+    <option value="start" id="opcija1">Sort by:</option>
+    <option value="price" id="opcija2">Price</option>
+</select>
+<section id="firstsection" class="web-content">
+
+</section>
+
+<form id="formAddArticle" class="forma">
+    </br></br></br></br></br></br></br></br></br></br></br></br></br>
+    <h2 id="top-form">Add New article</h2>
+    <input type="text" id="productName" placeholder="Ime proizvoda" value="" onkeyup="verification()"> </br>
+    <input type="text" id="maloprodajnaCena" placeholder="Maloprodajna cena" value="" onkeypress="return isNumberKey(event)"> </br>
+    <input type="text" id="veleprodajnaCena" placeholder="Veleprodajna cena" value="" onkeypress="return isNumberKey(event)"> </br>
+    <select id="select">
+        <option value="default">Izaberite kategoriju</option>
+    </select>
+    <button type="button" id="button-generate-podCategory" onclick="addPodCategoryItem()">Generate podCategory</button>
+    <select id="select2">
+        <option value="default">Izaberite podkategoriju</option>
+    </select> </br>
+    <textarea id="opis" placeholder="Opis proizvoda" value="" onkeyup="verification()" > </textarea> </br>
+    <input type="radio" id="imaNaStanju" value="" name="rdStanje" checked>Ima na stanju </br>
+    <input type="radio" id="nemaNaStanju" value="" name="rdStanje">Nema na stanju</br>
+    <input type="text" id="urlAdresa" value="" placeholder="URL adresa slike"> </br>
+
+
+    <button type="button" id="button-Add-Product" onclick="getArticle()">Add product</button> </br>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#m12345">
+        Launch demo modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="m12345" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<form id="formaAddCategory" class="forma2">
+    <h2>Add New Pod Category</h2>
+    <select id="select3">
+        <option value="defalut">Izaberite kategoriju</option>
+    </select> </br>
+    <input type="text" id="podCategoryName" placeholder="Ime nove podkategorije" value=""> </br>
+    <button type="button" id="button-add-Category" onclick="addNewPodCategory()">Add pod category</button>
+</form>
+
+<form id="formaNova">
+    <h2> Add New Category</h2>
+    <input type="text" id="categoryName" placeholder="Ime nove kategorije" value=""> </br>
+    <button type="button" onclick="dodajNovuKategoriju()">Add New Category</button>
+</form>
+
+<!--<form id="select-by-price">-->
+<!--&lt;!&ndash;    <input type="checkbox" id="do100" value="do100RSD" > Do 100 RSD </br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="checkbox" id="od100do200" value="od100do200RSD" > Od 100 do 200 RSD </br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="checkbox" id="preko200" value="preko2000" checked > Preko 200 RSD&ndash;&gt;-->
+<!--</form> </br>-->
+<!--<form id="select-by-type">-->
+<!--&lt;!&ndash;    <input type="checkbox" id="voce" value="voce" checked> Voce </br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="checkbox" id="povrce" value="povrce" > Povrce </br>&ndash;&gt;-->
+<!--</form>-->
+<!--<button id="button-filter-type" onclick="getType()">Sort by type</button>-->
+
+<footer class="footer">
+    <ul class="footer-list">
+        <li><h4 id="first-in-list1">FARFETCH APP</h4></li>
+        <li><a href="" class="li-a"><img src="img/devices-tablet-phone-512.png" id="phone" /> FarFetch App for iOS and Android</a></li>
+    </ul>
+
+    <ul class="footer-list">
+        <li><h4 id="first-in-list2">DESTINATION/REGION, CURRENCY AND LANGUAGE</h4> </li>
+        <li><a href="" class="list-item-not-first"><img src="img/output-onlinepngtools.png" id="flag-bottom"/> Serbia, EUR €</a></li>
+        <li><h4 id="follow-us"> FOLLOW US</h4></li>
+        <li><ul class="lista-follow-us">
+            <li><a href=""><img src="img/ERHHfn-png-logo-instagram-black.png" class="logo-footer"/></a></li>
+            <li><a href=""><img src="img/50-Best-Facebook-Logo-Icons-GIF-Transparent-PNG-Images-33.png" class="logo-footer"/></a></li>
+            <li><a href=""><img src="img/23681.png" class="logo-footer"/></a></li>
+            <li><a href=""><img src="img/29-292597_snapchat-ghost-outline-transparent-png-snapchat-logo-white.png" class="logo-footer"/></a></li>
+            <li><a href=""><img src="img/pinterest-logo-black-png-23.png" class="logo-footer"/></a></li>
+            <li><a href=""><img src="img/youtube-icon-white-transparent-16.jpg" class="logo-footer"/></a></li>
+        </ul></li>
+
+    </ul>
+
+    <ul class="footer-list third-part">
+        <li><h4 id="first-in-list3">CUSTOMER SERVICE</h4></li>
+        <li><a href="">Help & Contact Us</a></li>
+        <li><a href="">Orders & Shipping</a></li>
+        <li><a href="">Payment & Pricing</a></li>
+        <li><a href="">Returns & Refunds</a></li>
+        <li><a href="">Click & Collect</a></li>
+        <li><a href="">FAQs</a></li>
+        <li><a href="">Terms & Conditions</a></li>
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Accessibility</a></li>
+    </ul>
+    <ul class="footer-list fourth-part">
+        <li><h4 id="first-in-list4">ABOUT FARFETCH</h4></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Investors</a></li>
+        <li><a href="">Farfetch Boutique Partners</a></li>
+        <li><a href="">Affiliate Programme</a></li>
+        <li><a href="">Careers</a></li>
+        <li><a href="">Farfetch Customer Promise</a></li>
+        <li><a href="">Farfetch App</a></li>
+        <li><a href="">Sitemap</a></li>
+        <li><a href="">Positively Farfetch</a></li>
+    </ul>
+
+</footer>
+<script src="js/market.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
