@@ -4,6 +4,8 @@
     <list default="true" id="00aff109-5044-4db0-8961-d5f9e39a7ce9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/market.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/market.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +33,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bootstrap/jsbootstrap" />
+    <property name="last_opened_file_path" value="$USER_HOME$/react-project" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -73,6 +75,8 @@
       <workItem from="1570712669597" duration="22720000" />
       <workItem from="1570896289964" duration="5910000" />
       <workItem from="1571319620866" duration="571000" />
+      <workItem from="1571322434710" duration="40000" />
+      <workItem from="1571396589558" duration="7047000" />
     </task>
     <servers />
   </component>
@@ -84,7 +88,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

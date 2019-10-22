@@ -332,30 +332,30 @@ for (var i = 0; i < articleCategory.length; i++) {
 
 
 function addNewPodCategory(){
-        var podkategorija = document.getElementById('podCategoryName').value;
-        var select3 = document.getElementById('select3');
-        if(select3.selectedIndex==1){
-            //promeni deo koda iznad
-            var newPodCategory = new Object();
-            newPodCategory.id = articleCategory[0].podcategory[(articleCategory[0].podcategory.length) - 1].id + 1;
-            newPodCategory.name = podkategorija;
-            articleCategory[0].podcategory.push(newPodCategory);
-        }
-        else if(select3.selectedIndex==2) {
-            //promeni deo koda iznad
-            var newPodCategory = new Object();
-            newPodCategory.id = articleCategory[1].podcategory[(articleCategory[1].podcategory.length) - 1].id + 1;
-            newPodCategory.name = podkategorija;
-            articleCategory[1].podcategory.push(newPodCategory);
-        }else if(select3.selectedIndex==3) {
-            //promeni deo koda iznad
-            var newPodCategory = new Object();
-            newPodCategory.id = Math.floor(Math.random() * (10000 - 2000) + 2000);
-            newPodCategory.name = podkategorija;
-            articleCategory[2].podcategory.push(newPodCategory);
-        }
+    var podkategorija = document.getElementById('podCategoryName').value;
+    var select3 = document.getElementById('select3');
+    if(select3.selectedIndex==1){
+        //promeni deo koda iznad
+        var newPodCategory = new Object();
+        newPodCategory.id = articleCategory[0].podcategory[(articleCategory[0].podcategory.length) - 1].id + 1;
+        newPodCategory.name = podkategorija;
+        articleCategory[0].podcategory.push(newPodCategory);
+    }
+    else if(select3.selectedIndex==2) {
+        //promeni deo koda iznad
+        var newPodCategory = new Object();
+        newPodCategory.id = articleCategory[1].podcategory[(articleCategory[1].podcategory.length) - 1].id + 1;
+        newPodCategory.name = podkategorija;
+        articleCategory[1].podcategory.push(newPodCategory);
+    }else if(select3.selectedIndex==3) {
+        //promeni deo koda iznad
+        var newPodCategory = new Object();
+        newPodCategory.id = Math.floor(Math.random() * (10000 - 2000) + 2000);
+        newPodCategory.name = podkategorija;
+        articleCategory[2].podcategory.push(newPodCategory);
+    }
 
-        console.log(articleCategory);
+    console.log(articleCategory);
 }
 
 function dodajNovuKategoriju(){
